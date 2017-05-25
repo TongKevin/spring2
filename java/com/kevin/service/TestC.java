@@ -5,15 +5,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.kevin.serviceImpl.HelloApiDecorator;
+import com.kevin.serviceImpl.CA;
 
-public class TestHelloApiDecorator {
+import junit.framework.Assert;
+
+public class TestC {
 
 	static ClassPathXmlApplicationContext context;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+		context = new ClassPathXmlApplicationContext("classpath:applicationContext2.xml");
+		//context.setAllowCircularReferences(false);
 	}
 
 	@AfterClass
@@ -24,8 +27,10 @@ public class TestHelloApiDecorator {
 	@Test
 	public void testSay() {
 
-		HelloApiDecorator d1 = context.getBean("decorator1", HelloApiDecorator.class);
-		d1.sayDecorator();
+		CA ca = context.getBean("ca", CA.class);
+		
 	}
+
+	
 
 }

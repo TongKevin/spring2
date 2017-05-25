@@ -9,11 +9,12 @@
 	http://www.springframework.org/schema/task 
 	http://www.springframework.org/schema/task/spring-task-3.0.xsd">
 
+
 	<bean id="h1" class="com.kevin.serviceImpl.HelloApiImpl">
 	</bean>
 
 	<bean id="h2" class="com.kevin.serviceImpl.HelloApiImpl">
-		<constructor-arg name="msg" value="Kevin" />
+		<constructor-arg name="msg" ><null></null></constructor-arg>
 		<constructor-arg name="idx" value="611" />
 	</bean>
 
@@ -41,8 +42,10 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="decorator1" class="com.kevin.serviceImpl.HelloApiDecorator">
-		<constructor-arg name="helloApi" ref="h2"></constructor-arg>
+		<property name="helloApi">
+			<ref local="h2" />
+		</property>
 	</bean>
 </beans>
