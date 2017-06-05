@@ -3,6 +3,8 @@ package com.kevin.serviceImpl;
 import java.beans.ConstructorProperties;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.kevin.service.HelloApi;
 
 public class HelloApiImpl implements HelloApi {
