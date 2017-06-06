@@ -11,14 +11,14 @@
 
 
 
-	<bean id="helloApi33" class="com.kevin.serviceImpl.HelloApiImpl">
+	<bean class="com.kevin.serviceImpl.HelloApiImpl">
 		<constructor-arg name="msg" value="auto" />
 		<constructor-arg name="idx" value="611" />
 	</bean>
-<bean primary="true" id="helloApi" class="com.kevin.serviceImpl.HelloApiImpl">
-		<constructor-arg name="msg" value="auto" />
-		<constructor-arg name="idx" value="611" />
+<bean primary="true" class="com.kevin.serviceImpl.HelloApiImpl">
+		<constructor-arg name="msg" value="auto2" />
+		<constructor-arg name="idx" value="6112" />
 	</bean>
 	<bean id="decorator1" class="com.kevin.serviceImpl.HelloApiDecorator"
-		autowire="byType" />
+		autowire="constructor" />
 </beans>

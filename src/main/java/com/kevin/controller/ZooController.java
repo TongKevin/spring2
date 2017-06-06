@@ -5,19 +5,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kevin.service.ZooManager;
 
 @Controller
-
+@RequestMapping("/zoo")
 public class ZooController {
 
 	@Autowired
 	private ZooManager zooManager;
 	
-	@RequestMapping(value="/eat", method=RequestMethod.GET)
+	@RequestMapping(value="/eat/{id}", method=RequestMethod.GET)
 	public void zet(@PathVariable("id") String food)
 	{
+		System.out.println("food="+food);
 		zooManager.eat(food);
 	}
 }
